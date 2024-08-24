@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Art Style Transfer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Neural Art Style Transfer</h1>
+        <form id="uploadForm">
+            <div class="upload-container">
+                <div class="upload-section">
+                    <h2>Content Image</h2>
+                    <label for="contentImage" class="upload-label">
+                        <span>Choose File</span>
+                        <input type="file" id="contentImage" accept="image/*" required>
+                    </label>
+                    <div id="contentPreview" class="preview"></div>
+                </div>
+                <div class="upload-section">
+                    <h2>Style Image</h2>
+                    <label for="styleImage" class="upload-label">
+                        <span>Choose File</span>
+                        <input type="file" id="styleImage" accept="image/*" required>
+                    </label>
+                    <div id="stylePreview" class="preview"></div>
+                </div>
+            </div>
+            <button type="submit">Transfer Style</button>
+        </form>
+        <div id="result" class="hidden">
+            <h2>Stylized Result</h2>
+            <img id="resultImage" alt="Stylized Image">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
